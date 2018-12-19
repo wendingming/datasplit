@@ -1,0 +1,222 @@
+{include file='public/page_header.htm'}
+<link rel="stylesheet" href="{:config('public.static')}/ace1.4/assets/css/bootstrap.min.css" />
+<body do-page-width="3" class="fr-element fr-view do-page-395440"
+      do-phone-nav="do-drop-full"
+      do-phonenav-slip-direction="left-to-right" do-phonenav-btnalign="do-navBtn-right"
+>
+{include file='public/page_nav_mobile.htm'}
+<div class="do-container animate">
+    {include file='public/page_nav.htm'}
+    <script>$('.nav396874').addClass("active");</script>
+    {include file='public/page_banner.htm'}
+    <div class="do-body">
+        <div class="do-section do-area" id="area_396874_0" data-fullname="">
+            <div class="do-area-bg">
+                <div class="do-area-bg-conter">
+                    <div class="bgcolor"></div>
+                </div>
+            </div>
+            <div id="area_0" class="do-row do-row-one">
+                <div class="do-row">
+                    <div class="do-col-12 do-D-c-50-51" id="D-c-50-51">
+                        <div class="do-panelcol">
+                            <div class="do-block do-space do-tap06">
+                                <div class="do-element-space pc" style="padding-top:4.804392587508579%;"></div>
+                                <div class="do-element-space phone" style="padding-top:17.1%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="do-section do-area" id="area_396874_1" data-fullname="">
+            <div class="do-area-bg">
+                <div class="do-area-bg-conter">
+                    <div class="bgcolor"></div>
+                </div>
+            </div>
+            <div id="area_1" class="do-row do-row-one">
+                <div class="do-row">
+                    <div class="do-col-12 do-D-c-103-104" id="D-c-103-104">
+                        <div class="do-panelcol">
+                            <div class="do-block do-space do-tdhzl">
+                                <div class="do-element-space pc" style="padding-top:8.02675585284281%;"></div>
+                                <div class="do-element-space phone" style="padding-top:16.400000000000002%;"></div>
+                            </div>
+                            <div class="do-block do-text do-tdhzk">
+                                <div class="do-text-tdhzk">
+                                    <div class="do-element-text do-element-general">
+                                        <div class="do-element-text-content do-html">
+                                            <div class="do-html-content">
+                                                <p style="text-align: center;"><span style="font-size: 22px; color: rgb(200, 54, 36);">我们的案例</span></p>
+                                                <p style="text-align: center;"><span style="font-size: 16px; color: rgb(102, 102, 102);">精彩案例</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="do-block do-space do-tdhzj">
+                                <div class="do-element-space pc" style="padding-top:4.013377926421405%;"></div>
+                                <div class="do-element-space phone" style="padding-top:5%;"></div>
+                            </div>
+                            <div class="do-block do-rows">
+                                <div class="do-row">
+                                    <div class="do-col-1 do-D-c-103-104-126-127" id="D-c-103-104-126-127">
+                                        <div class="do-panelcol">
+                                            <div class="do-block do-space do-tdhzi">
+                                                <div class="do-element-space" style="padding-top:5%;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="do-col-11 do-D-c-103-104-129" id="D-c-103-104-129">
+                                        <div class="do-panelcol">
+                                            <div class="do-block do-rows">
+                                                <div class="do-row">
+                                                    <div class="do-col-10 do-D-c-103-104-129-136" id="D-c-103-104-129-136">
+                                                        <div class="do-panelcol">
+                                                            <div class="do-block do-list do-tdhzh">
+                                                                <div class="do-element-media x num3 phoneRows1 wl-gfwf">
+                                                                    <div class="do-element-media-content lg" id="swiper_tdhzh" data-rows="3" data-phonerows="1" data-initialslide="0" data-slidespercolumn="1">
+                                                                        <ul class="do-element-media-ul x do-content-grid ">
+                                                                            {volist name="lists" id="vo"}
+                                                                            <li class="do-element-media-li  pgid-396875" data-wow-delay=".0s">
+                                                                                <a href="/Index/example/view/id/{$vo.article_id}">
+                                                                                <div class="do-element-media-conter clearfix do-caption ">
+                                                                                    <div class="do-media-image-box o-mask">
+                                                                                        <div class="do-media-image" style="padding-top:91.16809116809117%;">
+                                                                                            <div class="do-media-image-conter">
+                                                                                                <img class="scrollLoading" alt=""
+                                                                                                     data-src="/public/static/upload/{$vo.file_url}"
+                                                                                                     src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAEElEQVR42gEFAPr/AP///wAI/AL+Sr4t6gAAAABJRU5ErkJggg=="
+                                                                                                     style="margin-left: -2.62764%; margin-top: 0%; width: 105.255%; height: 100%;" />
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="do-title do-html-content">
+                                                                                        <div class="do-title-body">
+                                                                                            <div class="do-title-content do-html-content">
+                                                                                                <div class="do-html-content title">
+                                                                                                    <p>{$vo.title}</p>
+                                                                                                </div>
+                                                                                                <div class="do-html-content des">
+                                                                                                    {$vo.description}
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div></a>
+                                                                            </li>
+                                                                            {/volist}
+                                                                        </ul>
+                                                                    </div>
+                                                                    <div class="do-block do-space">
+                                                                        <div class="do-element-space" style="padding-top:4.357142857142858%;"></div>
+                                                                    </div>
+                                                                    <div class="do-pagination do-bg-red">
+                                                                        {$lists->render()}
+                                                                    </div>
+                                                                </div>
+                                                                <style>.do-tdhzh .do-middle-center img { width:100%; }.do-tdhzh .do-title .title { font-size:18px;line-height:1.50em;text-align:center; }.do-tdhzh .do-title .des>* { font-size:14px;line-height:1.50em;text-align:center; }</style>
+                                                            </div>
+                                                            <div class="do-block do-space do-tdhzg">
+                                                                <div class="do-element-space pc" style="padding-top:3.5778175313059033%;"></div>
+                                                                <div class="do-element-space phone hide" style="padding-top:5%;"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="do-col-1 do-D-c-103-104-129-133-134" id="D-c-103-104-129-133-134">
+                                                        <div class="do-panelcol">
+                                                            <div class="do-block do-space do-tdhzf">
+                                                                <div class="do-element-space pc" style="padding-top:5%;"></div>
+                                                                <div class="do-element-space phone hide" style="padding-top:5%;"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="do-block do-code do-tdhze">
+                                <div class="do-element-code">
+                                    <div class="do-element-code-content">
+                                        <style>
+                                            .wl-gfwf .do-element-media-li:hover .do-media-image-box{transform: scale(.8);
+                                            }
+                                            .wl-gfwf .do-element-media-li:hover .do-title{transform: scale(.8);
+                                            }
+                                            .wl-gfwf .do-element-media-li .do-media-image-box{transition:2s;}
+                                            .wl-gfwf .do-element-media-li .do-title{transition:2s;}
+                                        </style>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="do-block do-space do-tdhzd">
+                                <div class="do-element-space pc" style="padding-top:5.792903692976104%;"></div>
+                                <div class="do-element-space phone" style="padding-top:9.70873786407767%;"></div>
+                            </div>
+                            <div class="do-area-bg">
+                                <div class="do-area-bg-conter">
+                                    <div class="bgcolor"></div>
+                                </div>
+                            </div>
+                            <style>.do-D-c-103-104 > .do-panelcol > .do-area-bg .bgcolor { background-color:rgb(255, 255, 255); }</style>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {include file='public/page_contact.htm'}
+    </div>
+    {include file='public/page_foot.htm'}
+</div>
+{include file='public/page_foot_buttom.htm'}
+<script type="text/javascript">
+    $(function(){
+        var wow = new WOW({
+            animateClass: 'animated',
+            offset: 0,
+            callback:function(box) { }
+        });
+        wow.init();        if(isWeiXin() && bIsAndroid){
+            var fullArea = $(".do-area-fullHeight .do-row-one > .do-row, .do-slide-full");
+            fullArea.height($(window).height());
+        }        if(head.desktop){
+            if(!_vm.online) $("#do-online-service").prop("checked",true);
+        }else{
+            $("#do-online-service").prop("checked",false);
+        }
+        if(bIsAndroid){
+            $(".do-area-videobg").find("video").remove();
+            var vodbgObj = $(".do-area-videobg .do-area-bg-conter");
+            vodbgObj.each(function(){
+                $(this).css('background-image','url("'+$(this).data("vodbg")+'")');
+            });
+        }
+        var weixinBtn = $(".weixinBtn"),
+                popwximg = $(".do-popwximg");
+        if(weixinBtn.length){
+            weixinBtn.on("click",function(e){
+                popwximg.show();
+            });
+            popwximg.on("click",".do-close",function(){
+                popwximg.hide();
+            });
+        }        layer.config({
+            path: 'http:\/\/bk.st.styleweb.com.cn\/editor/js/layer/',
+            extend: ['skin/style.css'],
+            skin: 'layer-zhuzi'
+        });
+    });    if(typeof _hmt == 'undefined'){
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "http://hm.baidu.com/hm.js-03e4f2f8489d3cb343fc1c99966f477b";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    }
+</script>
+</body>
+</html>

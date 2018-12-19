@@ -1,0 +1,146 @@
+<div class="page-content">
+    <div class="col-sm-6 pull-right">
+        <button class="btn btn-sm btn-primary pull-right" onclick="javascript:window.location.href = '/admin/Category/index'">
+            返回列表
+            <i class="icon-reply icon-only"></i>
+        </button>
+    </div>
+
+    <div class="page-header">
+        <h1>
+            {:model('Menu')->getParentNname()}
+            <small>
+                <i class="ace-icon fa fa-angle-double-right"></i>
+                {:input('id')?'编辑':'新增'}
+            </small>
+        </h1>
+    </div><!-- /.page-header -->
+
+    <div class="row">
+        <div class="col-xs-12">
+            <!-- PAGE CONTENT BEGINS -->
+            <form class="form-horizontal" role="form" action="{:input('id')?'/admin/Category/edit':'/admin/Category/add'}" method="post" name="myfrom" >
+                {:input('id')?'<input type="hidden" value="'.$info1['cat_id'].'" name="cat_id">':''}
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 上级菜单 </label>
+                    <div class="col-sm-9">
+                        {:select($selectCat,input('parent_id')?input('cat_id'):$info1['parent_id'],'name="parent_id" class="col-xs-10 col-sm-5"','--作为一级菜单--')}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right">图片</label>
+                    <div class="col-sm-9">
+                        <input type="file" name="img_file_src" value="" id="some_name" size="40" onchange="xmTanUploadImg(this)" />
+                        <br /><img id="xmTanImg" width="500px" src="/public/static/upload/{$info1.cat_icon}"/>
+                        <br /><input name="img_src" type="text" value="{$info1.cat_icon}" size="40" />
+                    </div>
+                    <!--<div class="col-sm-9">
+                        <span class="input-icon input-icon-left">
+                            <input type="text" id="form-field-icon-2" name="icon" value='{$info1.icon|default=''}' />
+                            <i class="ace-icon fa fa-leaf green"></i>
+                        </span>
+                        <a href="http://fontawesome.io/cheatsheet/" target="_blank">查看</a>
+
+                    </div>-->
+                </div>    
+
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right">名称</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="col-xs-10 col-sm-5"  name="cat_name" value="{$info1.cat_name|default=''}"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right">描述</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="col-xs-10 col-sm-5" name="cat_desc"  value='{$info1.cat_desc|default=''}'/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right">内容</label>
+                    <div class="col-sm-9">
+                        <textarea id="container" name="cat_content" cols="30" rows="15" style="width:100%; margin: 0 auto;">{$info1.cat_content|default=''}</textarea>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right">排序</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="col-xs-10 col-sm-5" name="sort_order"  value='{$info1.sort_order|default=''}'/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right">显示</label>
+                    <div class="col-sm-9">
+                        {:radio(model('Category')->is_on,$info1['is_on'],'class="" name="is_on"')}
+
+                    </div>
+                </div>
+
+                <div class="clearfix form-actions">
+                    <div class="col-md-offset-3 col-md-9">
+                        <button class="btn btn-info" type="button" onclick="myfrom.submit()">
+                            <i class="ace-icon fa fa-check bigger-110"></i>
+                            Submit
+                        </button>
+                        &nbsp; &nbsp; &nbsp;
+                        <button class="btn" type="reset">
+                            <i class="ace-icon fa fa-undo bigger-110"></i>
+                            Reset
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <!-- PAGE CONTENT ENDS -->
+        </div><!-- /.col -->
+    </div><!-- /.row -->
+</div><!-- /.page-content -->
+<!-- 配置文件 -->
+<script type="text/javascript" src="/public/__STATIC__/ueditor/ueditor.config.js"></script>
+<!-- 编辑器源码文件 -->
+<script type="text/javascript" src="/public/__STATIC__/ueditor/ueditor.all.js"></script>
+<!-- 实例化编辑器 -->
+<script type="text/javascript">
+    //var ue = UE.getEditor('container');
+    var ue = UE.getEditor('container', {
+        autoHeightEnabled:false,
+        initialFrameHeight:420
+    });
+</script>
+<script>
+    //选择图片，马上预览
+    function xmTanUploadImg(obj) {
+        var file = obj.files[0];
+
+        console.log(obj);console.log(file);
+        console.log("file.size = " + file.size);  //file.size 单位为byte
+
+        var reader = new FileReader();
+
+        //读取文件过程方法
+        reader.onloadstart = function (e) {
+            console.log("开始读取....");
+        }
+        reader.onprogress = function (e) {
+            console.log("正在读取中....");
+        }
+        reader.onabort = function (e) {
+            console.log("中断读取....");
+        }
+        reader.onerror = function (e) {
+            console.log("读取异常....");
+        }
+        reader.onload = function (e) {
+            console.log("成功读取....");
+
+            var img = document.getElementById("xmTanImg");
+            img.src = e.target.result;
+            //或者 img.src = this.result;  //e.target == this
+        }
+
+        reader.readAsDataURL(file)
+    }
+</script>

@@ -1,0 +1,230 @@
+{include file='public/page_header.htm'}
+<link rel="stylesheet" href="{:config('public.static')}/ace1.4/assets/css/bootstrap.min.css" />
+<body do-page-width="3" class="fr-element fr-view do-page-395440"
+      do-phone-nav="do-drop-full"
+      do-phonenav-slip-direction="left-to-right" do-phonenav-btnalign="do-navBtn-right"
+>
+{include file='public/page_nav_mobile.htm'}
+<div class="do-container animate">
+    {include file='public/page_nav.htm'}
+    <script>$('.nav397402').addClass("active");</script>
+    {include file='public/page_banner.htm'}
+    <div class="do-body">
+        <div class="do-section do-area" id="area_397402_0" data-fullname="">
+            <div class="do-area-bg">
+                <div class="do-area-bg-conter">
+                    <div class="bgcolor"></div>
+                </div>
+            </div>
+            <div id="area_0" class="do-row do-row-one ">
+                <div class="do-row ">
+                    <div class="do-col-12 do-D-c-55-56" id="D-c-55-56">
+                        <div class="do-panelcol">
+                            <div class="do-block do-space do-tg4pp">
+                                <div class="do-element-space pc" style="padding-top:5.0761421319796955%;"></div>
+                                <div class="do-element-space phone" style="padding-top:17.1%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="do-section do-area" id="area_397402_1" data-fullname="">
+            <div class="do-area-bg">
+                <div class="do-area-bg-conter">
+                    <div class="bgcolor"></div>
+                </div>
+            </div>
+            <div id="area_1" class="do-row do-row-one ">
+                <div class="do-row ">
+                    <div class="do-col-12 do-D-c-103-104" id="D-c-103-104">
+                        <div class="do-panelcol">
+                            <div class="do-block do-space do-tg4q0">
+                                <div class="do-element-space pc" style="padding-top:8.02675585284281%;"></div>
+                                <div class="do-element-space phone" style="padding-top:16.400000000000002%;"></div>
+                            </div>
+                            <div class="do-block do-rows">
+                                <div class="do-row">
+                                    <div class="do-col-1 do-D-c-103-104-126-127" id="D-c-103-104-126-127">
+                                        <div class="do-panelcol">
+                                            <div class="do-block do-space do-tg4px">
+                                                <div class="do-element-space" style="padding-top:5%;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="do-col-11 do-D-c-103-104-129" id="D-c-103-104-129">
+                                        <div class="do-panelcol">
+                                            <div class="do-block do-rows">
+                                                <div class="do-row">
+                                                    <div class="do-col-10 do-D-c-103-104-129-136" id="D-c-103-104-129-136">
+                                                        <div class="do-panelcol">
+                                                            <div class="do-block do-list do-tg4pl">
+                                                                <div class="do-element-media x do-time-open num1 phoneRows2 ly-news-text2">
+                                                                    <div class="do-element-media-content md" id="swiper_tg4pl" data-rows="1" data-phonerows="2" data-initialslide="0" data-slidespercolumn="1">
+                                                                        <ul class="do-element-media-ul x do-content-list ">
+                                                                            {volist name="lists" id="vo"}
+                                                                            <li class="do-element-media-li  do-img-animation wow fadeInLeft" data-wow-delay=".0s">
+                                                                                <a href="/Index/news/view/id/{$vo.article_id}">
+                                                                                <div class="do-element-media-conter clearfix do-caption">
+                                                                                    <div class="do-time-left">
+                                                                                        <h2>{$vo.add_time|date="m-d",###}</h2>
+                                                                                        <p>{$vo.add_time|date="Y",###}</p>
+                                                                                    </div>
+                                                                                    <div class="do-title do-html-content">
+                                                                                        <div class="do-title-body">
+                                                                                            <div class="do-title-content do-html-content">
+                                                                                                <div class="do-html-content title js-toclamp" data-clampnum="1">
+                                                                                                    {$vo.title}
+                                                                                                </div>
+                                                                                                <div class="do-html-content des">
+                                                                                                    {$vo.description}
+                                                                                                    <p class="do-time"><span>发布时间：</span> {$vo.add_time|date="Y-m-d H:i:s",###}</p>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div></a>
+                                                                            </li>
+                                                                            {/volist}
+                                                                        </ul>
+                                                                    </div>
+                                                                    <div class="do-block do-space">
+                                                                        <div class="do-element-space" style="padding-top:4.357142857142858%;"></div>
+                                                                    </div>
+                                                                    <div class="do-pagination do-bg-red">
+                                                                        {$lists->render()}
+                                                                    </div>
+                                                                </div>
+                                                                <style>.do-tg4pl .do-element-media-conter { background-color:rgb(255, 255, 255); }.do-tg4pl .do-middle-center img { width:35%; }</style>
+                                                            </div>
+                                                            <div class="do-block do-code do-tg4pk">
+                                                                <div class="do-element-code">
+                                                                    <div class="do-element-code-content">
+                                                                        <style>
+                                                                            @media only screen and (min-width:640px){
+                                                                                .ly-news-text2.do-element-media.num1 .do-element-media-li{width: 50%;}
+                                                                                .ly-news-text2.do-element-media.num1 .do-element-media-li .do-element-media-conter{transition: all 0.3s;}
+                                                                                .ly-news-text2.do-element-media.num1 .do-element-media-li .do-element-media-conter:hover{margin-top: -20px;}
+                                                                                .ly-news-text2 li .do-media-image-box{display: none;}
+                                                                                .ly-news-text2 .do-content-list .do-element-media-conter{padding:65px 30px;background-color:#eee;margin:0 10px;}
+                                                                                .ly-news-text2.do-element-media .do-time-left{text-align: left;width: 120px;}
+                                                                                .ly-news-text2 .do-content-list .do-time-left h2{font-weight: lighter;font-size: 36px;}
+                                                                                .ly-news-text2.do-element-media .title{font-family: "黑体";color: black;}
+                                                                                .ly-news-text2.do-element-media .des{color: #999;}
+                                                                                .ly-news-text2.do-element-media .des .js-toclamp{margin-bottom: 20px;}
+                                                                                .ly-news-text2.do-element-media .des:after{content: "MORE >";color: #999;}
+                                                                            }
+                                                                            @media only screen and (max-width: 800px){
+                                                                                .do-title-content.do-html-content{padding:10px 20px!important;}
+                                                                            }
+                                                                        </style>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="do-block do-code do-tg4pj">
+                                                                <div class="do-element-code">
+                                                                    <div class="do-element-code-content">
+                                                                        <style>
+                                                                            .ly-btn5 .do-element-button-content .do-btn.sm{padding: 10px 60px;}
+                                                                            .ly-btn5 .do-element-button-content .do-btn.sm h5{font-size: 14px;color: white;}
+                                                                        </style>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="do-col-1 do-D-c-103-104-129-133-134" id="D-c-103-104-129-133-134">
+                                                        <div class="do-panelcol">
+                                                            <div class="do-block do-space do-tg4pu">
+                                                                <div class="do-element-space" style="padding-top:5%;"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="do-block do-code do-tg4pt">
+                                <div class="do-element-code">
+                                    <div class="do-element-code-content">
+                                        <style>
+                                            .wl-gfwf .do-element-media-li:hover .do-media-image-box{transform: scale(.8);
+                                            }
+                                            .wl-gfwf .do-element-media-li:hover .do-title{transform: scale(.8);
+                                            }
+                                            .wl-gfwf .do-element-media-li .do-media-image-box{transition:2s;}
+                                            .wl-gfwf .do-element-media-li .do-title{transition:2s;}
+                                        </style>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="do-block do-space do-tg4ps">
+                                <div class="do-element-space pc" style="padding-top:5.792903692976104%;"></div>
+                                <div class="do-element-space phone" style="padding-top:17.1%;"></div>
+                            </div>
+                            <div class="do-area-bg">
+                                <div class="do-area-bg-conter">
+                                    <div class="bgcolor"></div>
+                                </div>
+                            </div>
+                            <style>.do-D-c-103-104 > .do-panelcol > .do-area-bg .bgcolor { background-color:rgb(255, 255, 255); }</style>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {include file='public/page_contact.htm'}
+    </div>
+    {include file='public/page_foot.htm'}
+</div>
+{include file='public/page_foot_buttom.htm'}
+<script type="text/javascript">
+    $(function(){
+        var wow = new WOW({
+            animateClass: 'animated',
+            offset: 0,
+            callback:function(box) { }
+        });
+        wow.init();        if(isWeiXin() && bIsAndroid){
+            var fullArea = $(".do-area-fullHeight .do-row-one > .do-row, .do-slide-full");
+            fullArea.height($(window).height());
+        }        if(head.desktop){
+            if(!_vm.online) $("#do-online-service").prop("checked",true);
+        }else{
+            $("#do-online-service").prop("checked",false);
+        }
+        if(bIsAndroid){
+            $(".do-area-videobg").find("video").remove();
+            var vodbgObj = $(".do-area-videobg .do-area-bg-conter");
+            vodbgObj.each(function(){
+                $(this).css('background-image','url("'+$(this).data("vodbg")+'")');
+            });
+        }
+        var weixinBtn = $(".weixinBtn"),
+                popwximg = $(".do-popwximg");
+        if(weixinBtn.length){
+            weixinBtn.on("click",function(e){
+                popwximg.show();
+            });
+            popwximg.on("click",".do-close",function(){
+                popwximg.hide();
+            });
+        }        layer.config({
+            path: 'http:\/\/bk.st.styleweb.com.cn\/editor/js/layer/',
+            extend: ['skin/style.css'],
+            skin: 'layer-zhuzi'
+        });
+    });    if(typeof _hmt == 'undefined'){
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "http://hm.baidu.com/hm.js-03e4f2f8489d3cb343fc1c99966f477b";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<div class=" do-section fp-auto-height do-header" do-header-fixed="" data-fullname="TOP">
+    <div class="do-area" id="header_395440_0">
+        <div class="do-area-bg">
+            <div class="do-area-bg-conter">
+                <div class="bgcolor"></div>
+            </div>
+        </div>
+        <div d="header_0" class="do-row do-row-one">
+            <div class="do-row">
+                <div class="do-col-12 do-H-c-21-22" id="H-c-21-22">
+                    <div class="do-panelcol">
+                        <div class="do-block do-rows">
+                            <div class="do-row">
+                                <div class="do-col-4 do-H-c-21-22-24-25" id="H-c-21-22-24-25">
+                                    <div class="do-panelcol">
+                                        <div class="do-block do-logo do-tg4q6">
+                                            <div do-logo="" class="do-logo">
+                                                <div class="z-logo align-left size8">
+                                                    <a href="/" title=""><img src="/public/static/bk.image.styleweb.com.cn/2018/6/7/13039_ji4c8sj7.png" alt="" /></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="do-col-8 do-H-c-21-22-24-27" id="H-c-21-22-24-27">
+                                    <div class="do-panelcol">
+                                        <div class="do-block do-nav do-tg4q5">
+                                            <div class="z-nav align-center">
+                                                <div class="z-nav-bar">
+                                                    <div class="z-nav-container">
+                                                        <ul class="z-nav-conter clearfix">
+                                                            <!-- 导航条 -->
+                                                            {foreach name='nav' item='v'}
+                                                                {notempty name="v.child"}
+                                                                <li class="nav{$v.id}" data-id="{$v.id}"><a href="{$v.title_href}"><span>{$v.title_name}</span></a>
+                                                                    <input type="checkbox" id="inputNavSub{$v.id}" class="do-m-menustate do-m-sub" />
+                                                                    <label for="inputNavSub{$v.id}" class="icon-isSub"></label>
+                                                                    <ul class="z-nav-sub">
+                                                                        {foreach name='v.child' item='vv'}
+                                                                        <li class="nav{$vv.id}" data-id="{$vv.id}"><a href="{$vv.title_href}"><span>{$vv.title_name}</span></a></li>
+                                                                        {/foreach}
+                                                                    </ul>
+                                                                </li>
+                                                                {else /}
+                                                                <li class="nav{$v.id}" data-id="{$v.id}"><a href="{$v.title_href}"><span>{$v.title_name}</span></a></li>
+                                                                {/notempty}
+                                                            {/foreach}
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="z-nav-btn">
+                                                    <span class="line-1"></span>
+                                                    <span class="line-2"></span>
+                                                    <span class="line-3"></span>
+                                                </div>
+                                            </div>
+                                            <style>
+                                                .z-nav { text-align:right; }.z-nav-conter > li.active > a,.z-nav-conter > li:hover > a { background-color:rgba(255, 255, 255, 0);color:rgb(208, 60, 27); }
+                                                .z-nav-conter > li:hover > a { background-color:rgba(255, 255, 255, 0);color:rgb(208, 60, 27); }
+                                                .z-nav-conter > li > a { color:rgb(0, 0, 0);font-size:14px; }
+                                            </style>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="do-block do-code do-tg4q4">
+                            <div class="do-element-code">
+                                <div class="do-element-code-content">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

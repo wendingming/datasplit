@@ -1,0 +1,99 @@
+<div class="page-content">
+    <div class="col-sm-6 pull-right">
+        <span class="btn btn-sm btn-primary pull-right" onclick="javascript:window.location.href = 'info'">
+            添加
+            <i class="icon-reply icon-only"></i>
+        </span>
+    </div>
+    <div class="page-header">
+        <h1>
+            {:model('Menu')->getName()}
+        </h1>
+    </div><!-- /.page-header -->
+
+    <div class="row">
+        <div class="col-xs-12">
+            <!-- PAGE CONTENT BEGINS -->
+            <div class="row">
+                <div class="col-xs-12">
+                    <table id="simple-table" class="table  table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th class="detail-col" width="20">排序</th>
+                                <th class="detail-col">ID</th>
+                                <th>商品名称</th>
+                                <th>商品分类</th>
+                                <th>商品关键字</th>
+                                <th>销售价</th>
+                                <th class="hidden-480">上架</th>
+                                <th>促销</th>
+                                <th>管理员操作</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                        <form action="" method="post" name="myform">
+
+                            {volist name="lists" id="vo"}
+                            <tr>
+                                <td><input type="text" name="listorder[{$vo.goods_id}]" value="{$vo.sort_order}" width="10"></td>
+                                <td>{$vo.goods_id}</td>
+                                <td>{$vo.goods_name}</td>
+                                <td>{:model('Category')->category_one($vo.cat_id)['cat_name']}</td>
+                                <td>{$vo['keywords']}</td>
+                                <td>{$vo['shop_price']}</td>
+                                <td class="hidden-480">
+                                    {eq name="$vo['is_on_sale']" value="1"}<span class="label label-sm label-success">上架</span>{else/}<span class="label label-sm label-warning">下架</span>{/eq}
+                                </td>
+                                <td>
+                                    <?php if($vo['promote_start_date'] == 0){ ?>
+                                        <span class="label label-sm label-warning">无</span>
+                                    <?php }else{
+                                        if($vo['promote_end_date'] > time()){ ?>
+                                            <span class="label label-sm label-success">进行中</span>
+                                    <?php }else{ ?>
+                                            <span class="label label-sm label-warning">已结束</span>
+                                        <?php } ?>
+                                    <?php } ?>
+                                </td>
+                                <td>
+                                    <?php if($vo['is_delete'] == 1){ ?>
+                                        <span class="label label-sm label-warning">已删除</span>
+                                    <?php }else{ ?>
+                                        <div class="hidden-sm hidden-xs">
+
+                                            <a href='{:url("info","id=$vo[goods_id]")}'>
+                                               <span class="btn btn-xs btn-info">
+                                                    <i class="ace-icon fa fa-pencil bigger-120"></i>
+                                                </span>
+                                            </a>
+                                            &nbsp;|&nbsp;
+                                            <a href='javascript:void(0)' onclick="return alert_del('{:url(\"del\",\"id=$vo[goods_id]\")}', '确认要删除『 id={$vo.goods_id} 』这条记录吗？');"
+                                               <span class="btn btn-xs btn-danger" >
+                                                    <i class="ace-icon fa fa-trash-o bigger-120"></i>
+                                                </span>
+                                            </a>
+
+                                        </div>
+                                    <?php } ?>
+                                </td>
+                            </tr>
+                            {/volist}  
+                        </form>
+                        </tbody>
+                    </table>
+                    <span class="btn btn-info" id="bootbox-confirm" onclick="myform.action = 'setListorder';myform.submit();">排序</span>
+                </div><!-- /.span -->
+            </div><!-- /.row -->
+
+
+
+
+            <!-- PAGE CONTENT ENDS -->
+        </div><!-- /.col -->
+    </div><!-- /.row -->
+</div><!-- /.page-content -->
+
+
+

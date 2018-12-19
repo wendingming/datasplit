@@ -1,0 +1,81 @@
+<div class="page-content">
+    <div class="col-sm-6 pull-right">
+        <span class="btn btn-sm btn-primary pull-right" onclick="javascript:window.location.href = '/admin/news/info'">
+            添加
+            <i class="icon-reply icon-only"></i>
+        </span>
+    </div>
+    <div class="page-header">
+        <h1>
+            {:model('menu')->getName()}
+        </h1>
+    </div><!-- /.page-header -->
+
+    <div class="row">
+        <div class="col-xs-12">
+            <!-- PAGE CONTENT BEGINS -->
+            <div class="row">
+                <div class="col-xs-12">
+                    <table id="simple-table" class="table  table-bordered table-hover">
+                        <thead>
+                        <tr>
+                            <th class="detail-col">ID</th>
+                            <th>文章标题</th>
+                            <th>文章类别</th>
+                            <th>文章图片</th>
+                            <th>文章简述</th>
+                            <th>添加时间</th>
+                            <th>是否显示</th>
+                            <th>管理员操作</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        {volist name="lists" id="vo"}
+                        <tr>
+                            <td>{$vo.article_id}</td>
+                            <td>{$vo.title}</td>
+                            <td>{$vo.cat_name}</td>
+                            <td class="hidden-480"><img src="/public/static/upload/{$vo.file_url}" width="95px" /></td>
+                            <td>{$vo.description}</td>
+                            <td>{:date('Y-m-d H:i:s',$vo['add_time'])}</td>
+                            <td>{eq name="vo['is_open']" value="1"}显示{else/}<span class="label label-sm label-warning">不显示</span>{/eq}</td>
+
+                            <td>
+                                <div class="hidden-sm hidden-xs btn-group">
+                                    <a href='{:url("/index/news/view","id=$vo[article_id]")}' target="_blank" class="tooltip-success" data-rel="tooltip" title="查看">
+                                        <span class="green">
+                                            <i class="ace-icon fa fa-book bigger-120"></i>
+                                        </span>
+                                    </a>
+                                    &nbsp;|&nbsp;
+                                    <a href='{:url("info","id=$vo[article_id]")}' class="tooltip-success" data-rel="tooltip" title="编辑">
+                                       <span class="btn btn-xs btn-info">
+                                            <i class="ace-icon fa fa-pencil bigger-120"></i>
+                                        </span>
+                                    </a>
+                                    &nbsp;|&nbsp;
+                                    <a href='javascript:void(0)' onclick="return alert_del('{:url(\"del\",\"id=$vo[article_id]\")}', '确认要删除『 id={$vo.article_id} 』这条记录吗？');" class="tooltip-success" data-rel="tooltip" title="删除">
+                                       <span class="btn btn-xs btn-danger">
+                                            <i class="ace-icon fa fa-trash-o bigger-120"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                            </td>
+
+                        </tr>
+                        {/volist}
+                        </tbody>
+                    </table>
+
+                </div><!-- /.span -->
+                {$lists->render()}
+            </div><!-- /.row -->
+
+            <!-- PAGE CONTENT ENDS -->
+        </div><!-- /.col -->
+    </div><!-- /.row -->
+</div><!-- /.page-content -->
+
+
+

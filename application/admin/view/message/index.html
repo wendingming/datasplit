@@ -1,0 +1,61 @@
+<div class="page-content">
+    <div class="page-header">
+        <h1>
+            {:model('menu')->getName()}
+        </h1>
+    </div><!-- /.page-header -->
+
+    <div class="row">
+        <div class="col-xs-12">
+            <!-- PAGE CONTENT BEGINS -->
+            <div class="row">
+                <div class="col-xs-12">
+                    <table id="simple-table" class="table  table-bordered table-hover">
+                        <thead>
+                        <tr>
+                            <th class="detail-col">ID</th>
+                            <th>留言姓名</th>
+                            <th>留言电话</th>
+                            <th>留言内容</th>
+                            <th>留言时间</th>
+                            <th>留言IP</th>
+                            <th>管理员操作</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        {volist name="lists" id="vo"}
+                        <tr>
+                            <td>{$vo.msg_id}</td>
+                            <td>{$vo.msg_name}</td>
+                            <td>{$vo.msg_tel}</td>
+                            <td>{$vo.msg_content}</td>
+                            <td>{:date('Y-m-d H:i:s',$vo['add_time'])}</td>
+                            <td>{$vo.msg_ip}</td>
+
+                            <td>
+                                <div class="hidden-sm hidden-xs btn-group">
+                                    <a href='javascript:void(0)' onclick="return alert_del('{:url(\"del\",\"id=$vo[msg_id]\")}', '确认要删除『 id={$vo.msg_id} 』这条记录吗？');" class="tooltip-success" data-rel="tooltip" title="删除">
+                                       <span class="btn btn-xs btn-danger">
+                                            <i class="ace-icon fa fa-trash-o bigger-120"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                            </td>
+
+                        </tr>
+                        {/volist}
+                        </tbody>
+                    </table>
+
+                </div><!-- /.span -->
+                {$lists->render()}
+            </div><!-- /.row -->
+
+            <!-- PAGE CONTENT ENDS -->
+        </div><!-- /.col -->
+    </div><!-- /.row -->
+</div><!-- /.page-content -->
+
+
+
