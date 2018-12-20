@@ -1,9 +1,9 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : mg_web
+Source Server         : our
 Source Server Version : 50641
-Source Host           : 47.93.194.175:3306
+Source Host           : 3306
 Source Database       : our
 
 Target Server Type    : MYSQL
@@ -40,10 +40,10 @@ CREATE TABLE `our_admin` (
 -- ----------------------------
 -- Records of our_admin
 -- ----------------------------
-INSERT INTO `our_admin` VALUES ('1', 'admin', '21232f297a57a5a743894a0e4a801fc3', '', '1903665077', '1542185647', '10000@qq.com', '18888888888', '明个', '', '1', '1477623198');
-INSERT INTO `our_admin` VALUES ('2', 'zhenxun', 'c2785bf6585103658d34413683ac36f8', '', '2130706433', '1476067533', '', '18888888888', '', '', '1', '1477624790');
-INSERT INTO `our_admin` VALUES ('3', 'zhangsan', '01d7f40760960e7bd9443513f22ab9af', '', '0', '0', '', '', '', '', '1', '1477625400');
-INSERT INTO `our_admin` VALUES ('4', 'test', '098f6bcd4621d373cade4e832627b4f6', '', '2130706433', '1495012830', '', '', '小演', '', '1', '1479969550');
+INSERT INTO `our_admin` VALUES ('1', 'admin', '21232f297a57a5a743894a0e4a801fc3', '', '1903665077', '1542185647', '10000@qq.com', '18888888888', '明哥', '', '1', '1545272574');
+INSERT INTO `our_admin` VALUES ('2', 'zhenxun', 'c2785bf6585103658d34413683ac36f8', '', '2130706433', '1545272574', '', '18888888888', '', '', '1', '1545272574');
+INSERT INTO `our_admin` VALUES ('3', 'zhangsan', '01d7f40760960e7bd9443513f22ab9af', '', '0', '0', '', '', '', '', '1', '1545272574');
+INSERT INTO `our_admin` VALUES ('4', 'test', '098f6bcd4621d373cade4e832627b4f6', '', '2130706433', '1545272574', '', '', '小演', '', '1', '1545272574');
 
 -- ----------------------------
 -- Table structure for `our_admin_group`
@@ -63,9 +63,9 @@ CREATE TABLE `our_admin_group` (
 -- ----------------------------
 -- Records of our_admin_group
 -- ----------------------------
-INSERT INTO `our_admin_group` VALUES ('1', '普通管理员', '密码加密只是MD5', '', '0', '1477622552');
-INSERT INTO `our_admin_group` VALUES ('2', '工作人员', '仅拥有日志管理权限', '18,23,27', '0', '1476067479');
-INSERT INTO `our_admin_group` VALUES ('3', '后台演示', '只能看，不能增删改', '31,1,2,3,7,8,23,18,12,13,27', '0', '1479969527');
+INSERT INTO `our_admin_group` VALUES ('1', '普通管理员', '密码加密只是MD5', '', '0', '1545272574');
+INSERT INTO `our_admin_group` VALUES ('2', '工作人员', '仅拥有日志管理权限', '18,23,27', '0', '1545272574');
+INSERT INTO `our_admin_group` VALUES ('3', '后台演示', '只能看，不能增删改', '31,1,2,3,7,8,23,18,12,13,27', '0', '1545272574');
 
 -- ----------------------------
 -- Table structure for `our_admin_group_access`
