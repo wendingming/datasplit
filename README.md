@@ -80,3 +80,6 @@ CREATE TABLE `our_datasplit_detail` (
 
 分表列表显示示例
 ![Alt text](/readmepic/datasplit_list.png "Optional title")
+
+分表编辑详情显示示例
+![Alt text](/readmepic/datasplit_info.png "Optional title")
