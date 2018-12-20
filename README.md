@@ -83,3 +83,6 @@ CREATE TABLE `our_datasplit_detail` (
 
 分表编辑详情显示示例
 ![Alt text](/readmepic/datasplit_info.png "Optional title")
+
+分表执行详情显示示例
+![Alt text](/readmepic/datasplit_detail.png "Optional title")
