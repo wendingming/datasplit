@@ -1,6 +1,30 @@
 《TP5+mysql通用分表代码说明文档》
 ===================
 
+## 前言
+- 我为什么做这个
+	- 很简单，网上很多关于分表的都是含糊其辞，没有任何详细的，通用的，既然没有，那么我写一个出来吧。
+
+- 主要目的
+	- 产品上线以后，数据量越来越大，当一个表有几十万上百万条记录的时候，是时候考虑分表了。【超过几千万记录的话，这个分表估计不适合。】
+
+- 怎么做
+	- 分表情况，1：hash分表，按照目标表的id的hash值，写入对应hash值的表【注意：需要这个表有唯一标示性ID】
+	- 分表情况，2：日期分表，按照目标表里面的记录日期的字段，按照日期【日、周、月、年】拆分成多个表【本代码仅考虑unix时间戳来分表，其它不支持，您可以自己思考，自己修改代码】
+	- 注意，支持【子表】，填入对应子表名、id、关联主表id，执行分表的时候，将对应把子表分表【目前支持2个子表，如果您想更多个子表，请自行修改代码】
+
+- 为什么要分享
+	- 赚积分呗，老子十几年的CSDN会员了，想在CSDN上下载个东西，还要积分，罢了，赚些积分吧，
+
+分表列表显示示例
+![Alt text](/readmepic/datasplit_list.png "Optional title")
+
+分表编辑详情显示示例
+![Alt text](/readmepic/datasplit_info.png "Optional title")
+
+分表执行详情显示示例
+![Alt text](/readmepic/datasplit_detail.png "Optional title")
+
 ## 系统后台
 - 后台地址
 	- /admin/login/index.html
@@ -78,11 +102,3 @@ CREATE TABLE `our_datasplit_detail` (
 
 ```
 
-分表列表显示示例
-![Alt text](/readmepic/datasplit_list.png "Optional title")
-
-分表编辑详情显示示例
-![Alt text](/readmepic/datasplit_info.png "Optional title")
-
-分表执行详情显示示例
-![Alt text](/readmepic/datasplit_detail.png "Optional title")
